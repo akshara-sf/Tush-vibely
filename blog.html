@@ -153,7 +153,7 @@
             <section class="mt-12">
                 <h2 class="text-2xl font-bold mb-6 text-center">All Posts</h2>
                 <div id="posts-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
-                    <!-- All posts will be loaded here -->
+                    
                 </div>
             </section>
 
@@ -312,23 +312,6 @@
                 });
             }
         });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
+        </script>
 </body>
 </html>

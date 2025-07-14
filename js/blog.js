@@ -1,5 +1,5 @@
-const SUPABASE_URL = 'https://vegpytbffidrfocatkth.supabase.co'; // Replace with your Supabase URL
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZlZ3B5dGJmZmlkcmZvY2F0a3RoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIzMzAxMzAsImV4cCI6MjA2NzkwNjEzMH0.iSvXSSQ9yIlk30tkCSVfPcAPUoRQvkea76XQjFP23EI'; // Replace with your Supabase anon key
+const SUPABASE_URL = 'https://vegpytbffidrfocatkth.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZlZ3B5dGJmZmlkcmZvY2F0a3RoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIzMzAxMzAsImV4cCI6MjA2NzkwNjEzMH0.iSvXSSQ9yIlk30tkCSVfPcAPUoRQvkea76XQjFP23EI';
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY, { db: { schema: 'public' } });
 
 // Static posts array
