@@ -1,0 +1,315 @@
+/*
+Theme Name: Tushh Custom Theme
+Author: Tushar Goswami
+Description: A custom WordPress theme from my HTML site
+Version: 1.0
+*/
+/* Main Styles for Tech Blog */
+
+/* Custom Properties */
+:root {
+    --transition-speed: 0.3s;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --color-primary: #7E57C2;
+    --color-secondary: #5E35B1;
+    --color-accent: #9575CD;
+    --color-dark: #231942;
+    --color-light: #F8F7FF;
+}
+
+/* Animations */
+@keyframes blob {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(30px, -30px) scale(1.1);
+    }
+    66% {
+        transform: translate(-20px, 30px) scale(0.9);
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(-25%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes gradient-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-gradient-rotate {
+    animation: gradient-rotate 20s linear infinite;
+}
+
+.animate-bounce-slow {
+    animation: bounce 2.5s infinite;
+}
+
+/* Animation Utilities */
+.animate-blob {
+    animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+    animation-delay: 4s;
+}
+
+.animate-bounce {
+    animation: bounce 2s infinite;
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-scroll {
+    animation: scroll 2s infinite;
+}
+
+/* Base Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Glassmorphism Effect */
+.glass {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.dark .glass {
+    background: rgba(30, 41, 59, 0.25);
+    border: 1px solid rgba(30, 41, 59, 0.18);
+}
+
+/* Neumorphism Effect */
+.neumorphic {
+    border-radius: 10px;
+    background: #f0f0f0;
+    box-shadow: 5px 5px 10px #d1d1d1, -5px -5px 10px #ffffff;
+}
+
+.dark .neumorphic {
+    background: #1e293b;
+    box-shadow: 5px 5px 10px #131b29, -5px -5px 10px #29374d;
+}
+
+/* Card Hover Effects */
+.card-hover {
+    transition: transform var(--transition-speed);
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.slide-up {
+    animation: slideUp 0.5s ease-in-out;
+}
+
+/* Code Block Styles */
+.code-block {
+    position: relative;
+    background-color: #f8f8f8;
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    font-family: 'Courier New', monospace;
+    overflow-x: auto;
+}
+
+.dark .code-block {
+    background-color: #1a1a1a;
+}
+
+.code-block pre {
+    margin: 0;
+    padding-right: 2.5rem;
+}
+
+.copy-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background var(--transition-speed);
+}
+
+.dark .copy-button {
+    background: rgba(30, 41, 59, 0.8);
+    color: #fff;
+}
+
+.copy-button:hover {
+    background: rgba(200, 200, 200, 0.8);
+}
+
+.dark .copy-button:hover {
+    background: rgba(50, 65, 90, 0.8);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 5px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #4b5563;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+}
+
+/* Slider Animation */
+@keyframes autoSlide {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(0); }
+    25% { transform: translateX(-100%); }
+    45% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    70% { transform: translateX(-200%); }
+    75% { transform: translateX(-300%); }
+    95% { transform: translateX(-300%); }
+    100% { transform: translateX(0); }
+}
+
+.auto-slide {
+    animation: autoSlide 20s infinite;
+}
+
+/* Ad Container Styles */
+.ad-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    text-align: center;
+    border: 1px dashed #ddd;
+}
+
+.dark .ad-container {
+    background-color: #2d3748;
+    border-color: #4a5568;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem !important;
+    }
+    
+    h2 {
+        font-size: 1.75rem !important;
+    }
+    
+    .hidden-mobile {
+        display: none !important;
+    }
+}
+.hidden {
+  display: none;
+}
+
+.post-card {
+  transition: transform 0.2s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+}

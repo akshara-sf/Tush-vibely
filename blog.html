@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VibelyCode - Latest coding tutorials and articles">
+    <title>Blog | VibelyCode</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#7E57C2',
+                        secondary: '#5E35B1',
+                        accent: '#9575CD',
+                        dark: '#231942',
+                        light: '#F8F7FF'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Ensure hidden class is respected -->
+    <style>
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body class="bg-light dark:bg-dark text-gray-800 dark:text-gray-200 transition-colors duration-300">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white/80 dark:bg-dark/80 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="/index.html" class="flex items-center gap-2">
+                <span class="text-2xl font-bold text-primary font-['Poppins'] tracking-tight flex items-center">
+                    <img src="../images/WhatsApp Image 2025-05-26 at 22.36.18_29367934.jpg" 
+                         alt="VibelyCode Logo" 
+                         class="h-8 w-8 mr-2 rounded-full object-cover border-2 border-accent">
+                    Vibely<span class="text-accent">Code</span>
+                </span>
+            </a>
+            
+            <div class="hidden md:flex space-x-6">
+                <a href="/index.html" class="hover:text-primary transition-colors">Home</a>
+                <a href="/blog.html" class="hover:text-primary transition-colors">Blog</a>
+                <a href="/about.html" class="hover:text-primary transition-colors font-medium text-primary">About</a>
+                <a href="/contact.html" class="hover:text-primary transition-colors">Contact</a>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="hover:text-primary transition-colors">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:block"></i>
+                </button>
+                <button id="mobile-menu-toggle" class="md:hidden hover:text-primary transition-colors">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark border-t dark:border-gray-700">
+            <div class="container mx-auto px-4 py-3">
+                <a href="/index.html" class="block py-2 hover:text-primary transition-colors">Home</a>
+                <a href="/blog.html" class="block py-2 hover:text-primary transition-colors">Blog</a>
+                <a href="/about.html" class="block py-2 hover:text-primary transition-colors font-medium text-primary">About</a>
+                <a href="/contact.html" class="block py-2 hover:text-primary transition-colors">Contact</a>
+            </div>
+        </div>
+        
+
+    </nav>
+
+   <!-- Page Header -->
+    <header class="py-16 bg-gradient-to-r from-purple-50 to-indigo-100 dark:from-dark dark:to-secondary/30">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Our <span class="text-primary">Blog</span></h1>
+            <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                Latest coding tutorials, tips, and insights from the VibelyCode team
+            </p>
+        </div>
+    </header>
+
+ <!-- Main Content -->
+    <main class="py-12 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <!-- Category Filter -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button data-category="all" class="category-filter px-4 py-2 rounded-full bg-primary text-white text-sm font-medium">All Posts</button>
+                <button data-category="HTML & CSS" class="category-filter px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 text-sm font-medium transition-colors">HTML & CSS</button>
+                <button data-category="JavaScript" class="category-filter px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 text-sm font-medium transition-colors">JavaScript</button>
+                <button data-category="Frameworks" class="category-filter px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 text-sm font-medium transition-colors">Frameworks</button>
+                <button data-category="Tools" class="category-filter px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 text-sm font-medium transition-colors">Tools</button>
+                <button data-category="CSS" class="category-filter px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 text-sm font-medium transition-colors">CSS</button>
+            </div>
+
+            <!-- Create Post Button -->
+            <div class="text-center my-4">
+                <button id="toggle-form-btn" class="bg-secondary text-white px-4 py-2 rounded shadow-md hover:bg-primary transition-colors">Create Post</button>
+            </div>
+
+            <!-- Post Form -->
+            <section id="post-form-section" class="hidden max-w-xl mx-auto p-4">
+                <form id="post-form" class="bg-white dark:bg-gray-800 shadow-md rounded p-6 space-y-4" enctype="multipart/form-data">
+                    <div>
+                        <label for="title" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Title</label>
+                        <input type="text" id="title" placeholder="Enter post title" class="w-full border p-2 rounded focus:outline-none focus:ring-2 focus:ring-primary" required />
+                    </div>
+                    <div>
+                        <label for="content" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Content</label>
+                        <textarea id="content" placeholder="Enter post content" class="w-full border p-2 rounded focus:outline-none focus:ring-2 focus:ring-primary" rows="5" required></textarea>
+                    </div>
+                    <div>
+                        <label for="category" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Category</label>
+                        <select id="category" class="w-full border p-2 rounded focus:outline-none focus:ring-2 focus:ring-primary" required>
+                            <option value="" disabled selected>Select a category</option>
+                            <option value="HTML & CSS">HTML & CSS</option>
+                            <option value="JavaScript">JavaScript</option>
+                            <option value="Frameworks">Frameworks</option>
+                            <option value="Tools">Tools</option>
+                            <option value="CSS">CSS</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="author" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Author Name</label>
+                        <input type="text" id="author" placeholder="Enter author name" class="w-full border p-2 rounded focus:outline-none focus:ring-2 focus:ring-primary" />
+                    </div>
+                    <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded w-full hover:bg-green-700 transition-colors" id="submit-btn">Submit</button>
+                </form>
+            </section>
+
+            <!-- Recent Posts -->
+            <section class="mt-12">
+                <h2 class="text-2xl font-bold mb-6 text-center">Recent Posts</h2>
+                <div id="recent-posts-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+                    <!-- Recent posts (last 7 days) will be loaded here -->
+                </div>
+            </section>
+
+            <!-- All Posts -->
+            <section class="mt-12">
+                <h2 class="text-2xl font-bold mb-6 text-center">All Posts</h2>
+                <div id="posts-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+                    <!-- All posts will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Pagination -->
+            <div class="mt-12 flex justify-center">
+                <nav id="pagination-container" class="flex items-center space-x-1">
+                    <!-- Pagination buttons will be dynamically inserted here -->
+                </nav>
+            </div>
+        </div>
+    </main>
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-purple-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">Subscribe to our Newsletter</h2>
+                <p class="text-gray-600 dark:text-gray-300 mb-8">Get the latest tutorials, tips, and guides delivered straight to your inbox.</p>
+                <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                    <button type="submit" class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-secondary transition-colors font-medium">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+<!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Vibely<span class="text-accent">Code</span></h3>
+                    <p class="text-gray-400 mb-4"><strong>Vibely Code</strong> 💻✨ is a curated space for modern devs — sharing aesthetic code tips 🌈, AI insights 🤖, and multi-language guides 🌐 to make learning beautifully simple and inspiring. 💫</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/vibely.code?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@vibelycode" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://t.me/vibelycode" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="/blog.html" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="/about.html" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="/contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Categories</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">HTML & CSS</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">JavaScript</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Responsive Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Web Performance</a></li>
+                    </ul>
+                </div>
+                
+
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2025 VibelyCode. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Back to Top Button (unchanged) -->
+    <button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg hover:bg-secondary transition-all duration-300 transform hover:-translate-y-1 opacity-0 invisible scale-90 group" aria-label="Back to top">
+        <i class="fas fa-arrow-up transform group-hover:-translate-y-0.5 transition-transform"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/blog.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const searchToggle = document.getElementById('search-toggle');
+            const searchBar = document.getElementById('search-bar');
+            const backToTop = document.getElementById('backToTop');
+            const themeToggle = document.getElementById('theme-toggle');
+
+            // Toggle mobile menu
+            if (mobileMenuToggle && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    if (searchBar) searchBar.classList.add('hidden');
+                });
+            }
+
+            // Toggle search bar
+            if (searchToggle && searchBar) {
+                searchToggle.addEventListener('click', () => {
+                    searchBar.classList.toggle('hidden');
+                    if (mobileMenu) mobileMenu.classList.add('hidden');
+                });
+            }
+
+            // Back to top button
+            if (backToTop) {
+                window.addEventListener('scroll', () => {
+                    if (window.pageYOffset > 300) {
+                        backToTop.classList.remove('opacity-0', 'invisible', 'scale-90');
+                        backToTop.classList.add('opacity-100', 'visible', 'scale-100');
+                    } else {
+                        backToTop.classList.remove('opacity-100', 'visible', 'scale-100');
+                        backToTop.classList.add('opacity-0', 'invisible', 'scale-90');
+                    }
+                });
+
+                backToTop.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+
+            // Theme toggle
+            if (themeToggle) {
+                // Set initial theme
+                if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
+
+                // Toggle theme on click
+                themeToggle.addEventListener('click', () => {
+                    document.documentElement.classList.toggle('dark');
+                    localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+                    
+                    // Toggle the moon/sun icons
+                    const moonIcon = themeToggle.querySelector('.fa-moon');
+                    const sunIcon = themeToggle.querySelector('.fa-sun');
+                    
+                    if (moonIcon && sunIcon) {
+                        moonIcon.classList.toggle('hidden');
+                        sunIcon.classList.toggle('hidden');
+                    }
+                });
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
